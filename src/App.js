@@ -1,45 +1,33 @@
-const App = () => (
-  <>
-      {/* header */}
-      <header className="jumbotron mt-4 mb-0">
-          <h1>PongPing</h1>
-      </header>
+import Header from "./components/Header";
+import ScoreCard from "./components/ScoreCard";
+import WinnerMessage from "./components/WinnerMessage";
+import Reset from "./components/Reset";
 
-      {/* scores */}
+const App = ({ playerOneDisplayScore, playerTwoDisplayScore, playerOneScores, playerTwoScores, reset, server, player1Wins, player2Wins }) => (
+<>
+      <Header />
       <div className="row mb-4">
-          <div className="col-md-6 mt-4">
-              <div className="card text-center bg-dark text-white">
-                  <h5 className="card-header">Player 1</h5>
-                  <div className="card-body">
-                      <p className="card-text display-1">{/* player1 score */}</p>
-                  </div>
-                  <div className="card-footer">
-                      <button className="form-control btn btn-success">+</button>
-                  </div>
-              </div>
-          </div>
+        
+        <ScoreCard 
+        handleClick={ playerOneScores } 
+        score={ playerOneDisplayScore }
+        player={"Player 1"}
+        server={server}/>
 
-          <div className="col-md-6 mt-4">
-              <div className="card text-center">
-                  <h5 className="card-header">Player 2</h5>
-                  <div className="card-body">
-                      <p className="card-text display-1">{/* player2 score */}</p>
-                  </div>
-                  <div className="card-footer">
-                      <button className="form-control btn btn-success">+</button>
-                  </div>
-              </div>
-          </div>
+        <ScoreCard 
+        handleClick={ playerTwoScores } 
+        score={ playerTwoDisplayScore }
+        player={"Player 2"}
+        server={!server} />
       </div>
 
-      { /* winner message */}
-      <h2 className="alert alert-success">Player {/* winning player here */} wins!</h2>
+      <Reset reset={reset} />
+      <WinnerMessage
+      player1Wins={ player1Wins } 
+      player2Wins={ player2Wins }
+      />
 
-      <hr />
-
-      { /* reset button */}
-      <button className="btn btn-danger">Reset</button>
-  </>
+</>
 );
 
 export default App;
