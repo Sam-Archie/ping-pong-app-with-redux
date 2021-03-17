@@ -4,16 +4,9 @@ export const reset = () => {
     };
 };
 
-export const playerOne = () => {
+export const player = (num) => {
     return {
         type: "SCORE",
-        player: "player1",
-    };
-};
-
-export const playerTwo = () => {
-    return {
-        type: "SCORE",
-        player: "player2",
+        player: `player${num}`,
     };
 };

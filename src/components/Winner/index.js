@@ -3,8 +3,7 @@ import WinnerMessage from "./WinnerMessage";
 
 const mapStateToProps = (state) => {
     return {
-        player2Wins: state.player2Wins,
+        playerWins: state.playerWins,
     }
 }
-
 export default connect(mapStateToProps)(WinnerMessage);
