@@ -10,3 +10,9 @@ export const player = (num) => {
         player: `player${num}`,
     };
 };
+
+export const start = (e) => {
+    return {
+        type: "START"
+    }
+}

@@ -40,12 +40,21 @@ const wins = (state) => {
   }
 }
 
+const start = (state, action) => {
+  return {
+    ...state,
+    hasStarted: true,
+  }
+}
+
 const reducer = (state, action) => {
     switch (action.type) {
 
       case "SCORE" : return wins(server(playerScores(state, action)));
 
       case "RESET" : return initial;
+
+      case "START" : return start(state, action);
 
       default : return state;
     }
