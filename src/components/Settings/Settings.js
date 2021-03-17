@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Settings = ( {hasStarted} ) => {
+const Settings = ({ hasStarted }) => {
     let [playerOneName, setPlayerOneName] = useState("");
     let [playerTwoName, setPlayerTwoName] = useState("");
     let [winningScore, setWinningScore] = useState("21");
