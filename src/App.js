@@ -1,5 +1,5 @@
 import Header from "./components/Header";
-import Reset from "./components/Reset";
+import Reset from "./components/Reset/";
 import Player1 from "./components/ScoreCard/Player1.js";
 import Player2 from "./components/ScoreCard/Player2.js";
 import PlayerOneWins from "./components/Winner/PlayerOneWins.js";
@@ -7,7 +7,7 @@ import PlayerTwoWins from "./components/Winner/PlayerTwoWins.js";
 import PlayerWins from "./components/Winner/PlayerWins.js";
 
 
-const App = ({ playerOneScores, playerTwoScores, reset, player1Wins, player2Wins }) => (
+const App = ({ playerOneScores, playerTwoScores, player1Wins, player2Wins }) => (
 <>
       <Header />
 
@@ -23,7 +23,7 @@ const App = ({ playerOneScores, playerTwoScores, reset, player1Wins, player2Wins
              />
       </div>
 
-      <Reset reset={reset} />
+      <Reset/>
       
       <PlayerWins />
 

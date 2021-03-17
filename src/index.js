@@ -17,7 +17,6 @@ import store from "./data/store";
             playerOneScores={() => store.dispatch({ type: "SCORE", player: "player1" })} 
             playerTwoScores={() => store.dispatch({ type: "SCORE", player: "player2" })}
             // server={ state.server }
-            reset={() => store.dispatch({ type: "RESET" })}
             // playerOneDisplayScore={ state.player1 }
             // playerTwoDisplayScore={ state.player2 }
             // player1Wins={ state.player1Wins }
