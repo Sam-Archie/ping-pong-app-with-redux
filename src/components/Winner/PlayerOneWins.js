@@ -7,5 +7,4 @@ const mapStateToProps = (state) => {
         player1Wins: state.player1Wins,
     }
 }
-
 export default connect(mapStateToProps)(WinnerMessage);

@@ -14,13 +14,6 @@ import store from "./data/store";
         <React.StrictMode>
           <Provider store={ store }>
             <App 
-            playerOneScores={() => store.dispatch({ type: "SCORE", player: "player1" })} 
-            playerTwoScores={() => store.dispatch({ type: "SCORE", player: "player2" })}
-            // server={ state.server }
-            // playerOneDisplayScore={ state.player1 }
-            // playerTwoDisplayScore={ state.player2 }
-            // player1Wins={ state.player1Wins }
-            // player2Wins={ state.player2Wins }
             />
           </Provider>
         </React.StrictMode>,

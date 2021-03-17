@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import  ScoreCard  from "./ScoreCard";
+import { playerTwo } from "../../data/actions";
 
 const mapStateToProps = (state) => {
     return {
@@ -7,4 +8,12 @@ const mapStateToProps = (state) => {
         score: state.player2,
     }
 }
-export default connect(mapStateToProps)(ScoreCard);
+
+const mapDispatchToProps = (dispatch) => {
+    
+    return {
+        handleClick: () => dispatch(playerTwo())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ScoreCard);
