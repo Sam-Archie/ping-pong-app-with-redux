@@ -1,31 +1,31 @@
 import Header from "./components/Header";
-import ScoreCard from "./components/ScoreCard";
-import WinnerMessage from "./components/WinnerMessage";
 import Reset from "./components/Reset";
+import Player1 from "./components/ScoreCard/Player1.js";
+import Player2 from "./components/ScoreCard/Player2.js";
+import PlayerOneWins from "./components/Winner/PlayerOneWins.js";
+import PlayerTwoWins from "./components/Winner/PlayerTwoWins.js";
+import PlayerWins from "./components/Winner/PlayerWins.js";
 
-const App = ({ playerOneDisplayScore, playerTwoDisplayScore, playerOneScores, playerTwoScores, reset, server, player1Wins, player2Wins }) => (
+
+const App = ({ playerOneScores, playerTwoScores, reset, player1Wins, player2Wins }) => (
 <>
       <Header />
-      <div className="row mb-4">
-        
-        <ScoreCard 
-        handleClick={ playerOneScores } 
-        score={ playerOneDisplayScore }
-        player={"Player 1"}
-        server={server}/>
 
-        <ScoreCard 
-        handleClick={ playerTwoScores } 
-        score={ playerTwoDisplayScore }
-        player={"Player 2"}
-        server={!server} />
+      <div className="row mb-4">
+          
+          <Player1
+            handleClick={ playerOneScores } 
+            player={1}
+          />
+          <Player2 
+            handleClick={ playerTwoScores } 
+            player={2}
+             />
       </div>
 
       <Reset reset={reset} />
-      <WinnerMessage
-      player1Wins={ player1Wins } 
-      player2Wins={ player2Wins }
-      />
+      
+      <PlayerWins />
 
 </>
 );
