@@ -11,12 +11,10 @@ export const player = (num) => {
     };
 };
 
-export const start = (playerOneName, playerTwoName, winningScore, servingNumber ) => {
+export const start = (data) => {
     return {
         type: "START",
-        meta: {
-            playerOneName, playerTwoName, winningScore, servingNumber
-        }
+        payload: data,
     }
 }
 

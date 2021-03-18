@@ -15,7 +15,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-       hasStarted: (playerOneName, playerTwoName, winningScore, servingNumber) => dispatch(start(playerOneName, playerTwoName, winningScore, servingNumber)),
+       hasStarted: (data) => dispatch(start(data)),
     }
 }
 

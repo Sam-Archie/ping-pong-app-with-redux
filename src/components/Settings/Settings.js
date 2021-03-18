@@ -7,6 +7,7 @@ const Settings = ({hasStarted}) => {
     let [winningScore, setWinningScore] = useState("21");
     let [servingNumber, setServingNumber] = useState("5");
 
+
     const handleChangePlayerOne = (e) => {
         setPlayerOneName(e.currentTarget.value);
     }
@@ -21,8 +22,16 @@ const Settings = ({hasStarted}) => {
     }
 
     const submit = (e) => {
+        
+        const data = {
+            playerOneName: playerOneName,
+            playerTwoName: playerTwoName,
+            winningScore: winningScore,
+            servingNumber: servingNumber,
+        }
+
         e.preventDefault();
-        hasStarted(playerOneName, playerTwoName, winningScore, servingNumber);
+        hasStarted(data);
     }
 
     return (

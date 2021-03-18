@@ -40,17 +40,13 @@ const wins = (state) => {
   }
 }
 
-const start = (state, {meta}) => {
+const start = (state, {payload}) => {
   
   return {
-
     ...state,
     hasStarted: true,
-    playerOneName : meta.playerOneName,
-    playerTwoName: meta.playerTwoName,
-    winningScore: meta.winningScore,
-    servingNumber: meta.servingNumber,
-    
+    ...payload,
+  
   }
 }
 
