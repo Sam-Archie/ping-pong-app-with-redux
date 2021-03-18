@@ -1,5 +1,6 @@
 import initial from "./initial";
 
+
 const playerScores = (state , {player}) => {
 
     return {
@@ -40,12 +41,15 @@ const wins = (state) => {
   }
 }
 
-const start = (state, {payload}) => {
-  
+const startGame = (state, {payload}) => {
+
   return {
     ...state,
     hasStarted: true,
-    ...payload,
+    playerOneName : payload.player_1.name, 
+    playerTwoName : payload.player_2.name,
+    winningScore : payload.winning_score,
+    servingNumber : payload.change_serve,
   
   }
 }
@@ -68,7 +72,7 @@ const reducer = (state, action) => {
 
       case "RESET" : return reset(state);
 
-      case "START" : return start(state, action);
+      case "START" : return startGame(state, action);
 
       default : return state;
     }

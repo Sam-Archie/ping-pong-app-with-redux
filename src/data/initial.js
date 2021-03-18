@@ -8,6 +8,7 @@ const initial = {
     hasStarted: false,
     playerOneName: "",
     playerTwoName: "",
+    loaded: false,
   };
   
   export default initial;
