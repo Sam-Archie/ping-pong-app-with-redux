@@ -11,8 +11,12 @@ export const player = (num) => {
     };
 };
 
-export const start = (e) => {
+export const start = (playerOneName, playerTwoName, winningScore, servingNumber ) => {
     return {
-        type: "START"
+        type: "START",
+        meta: {
+            playerOneName, playerTwoName, winningScore, servingNumber
+        }
     }
 }
+

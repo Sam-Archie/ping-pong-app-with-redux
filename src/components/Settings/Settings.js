@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-const Settings = ({ hasStarted }) => {
+const Settings = ({hasStarted}) => {
+
     let [playerOneName, setPlayerOneName] = useState("");
     let [playerTwoName, setPlayerTwoName] = useState("");
     let [winningScore, setWinningScore] = useState("21");
     let [servingNumber, setServingNumber] = useState("5");
-
 
     const handleChangePlayerOne = (e) => {
         setPlayerOneName(e.currentTarget.value);
@@ -22,7 +22,7 @@ const Settings = ({ hasStarted }) => {
 
     const submit = (e) => {
         e.preventDefault();
-        hasStarted();
+        hasStarted(playerOneName, playerTwoName, winningScore, servingNumber);
     }
 
     return (
