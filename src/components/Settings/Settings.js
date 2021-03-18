@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Settings = ({hasStarted}) => {
+const Settings = ({hasStarted, p1Name, p2Name, winScore, serveNum}) => {
 
     let [playerOneName, setPlayerOneName] = useState("");
     let [playerTwoName, setPlayerTwoName] = useState("");
@@ -35,6 +35,7 @@ const Settings = ({hasStarted}) => {
     }
 
     return (
+
         <form className="form-group"  onSubmit={ submit }>
             <label htmlFor="playerOne">Player 1 Name</label>
             <input  
@@ -42,8 +43,8 @@ const Settings = ({hasStarted}) => {
             type="text" 
             id="playerOne" 
             name="playerOne" 
-            onChange={handleChangePlayerOne} 
-            value={playerOneName}/>
+            onChange={ handleChangePlayerOne } 
+            value={ p1Name }/>
 
             <label htmlFor="playerTwo">Player 2 Name</label>
             <input 
@@ -51,8 +52,8 @@ const Settings = ({hasStarted}) => {
             type="text" 
             id="playerTwo" 
             name="playerTwo" 
-            onChange={handleChangePlayerTwo} 
-            value={playerTwoName}
+            onChange={ handleChangePlayerTwo } 
+            value={ p2Name }
             />
 
             <label htmlFor="score">Winning Score</label>
@@ -61,16 +62,16 @@ const Settings = ({hasStarted}) => {
             type="number" 
             id="score"
             name="score"
-            onChange={handleWinningScore} 
-            value={winningScore}/>
+            onChange={ handleWinningScore } 
+            value={ winScore }/>
 
             <label htmlFor="alternate">Alternate</label>
             <select 
             className="form-control" 
             id="alternate" 
             name="alternate" 
-            onChange={handleServingNumber}  
-            value={servingNumber}>
+            onChange={ handleServingNumber }  
+            value={ serveNum }>
 
                 <option value="3">3</option>
                 <option value="5">5</option>

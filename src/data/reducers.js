@@ -50,12 +50,23 @@ const start = (state, {payload}) => {
   }
 }
 
+const reset = (state) => {
+    return {
+      ...initial,
+      playerOneName : state.playerOneName,
+      playerTwoName : state.playerTwoName,
+      winningScore : state.winningScore,
+      servingNumber : state.servingNumber,
+
+    }
+}
+
 const reducer = (state, action) => {
     switch (action.type) {
 
       case "SCORE" : return wins(server(playerScores(state, action)));
 
-      case "RESET" : return initial;
+      case "RESET" : return reset(state);
 
       case "START" : return start(state, action);
 
