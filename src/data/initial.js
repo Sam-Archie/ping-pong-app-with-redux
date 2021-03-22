@@ -9,6 +9,7 @@ const initial = {
     playerOneName: "",
     playerTwoName: "",
     loaded: false,
+    game_id: "",
   };
   
   export default initial;

@@ -1,5 +1,6 @@
 import axios from "../../axios";
-import {start} from "./state";
+import {start, player} from "./state";
+
 
 export const postGame = (data) => {
     return dispatch => {
@@ -11,7 +12,19 @@ export const postGame = (data) => {
 
         }).then(({ data }) => {
             dispatch(start(data.data))
-            console.log(data.data)
         })
     }
 }
+
+export const patchScore = playerNumber => {
+    return (dispatch, getState) => {
+        const id = getState().game_id;
+        axios.patch(`/games/${id}/score`, {
+            player : playerNumber,
+        }
+    ).then(() => {
+        dispatch(player(playerNumber))
+    })}
+}
+
+

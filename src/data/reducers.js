@@ -50,7 +50,8 @@ const startGame = (state, {payload}) => {
     playerTwoName : payload.player_2.name,
     winningScore : payload.winning_score,
     servingNumber : payload.change_serve,
-  
+    game_id : payload.id,
+    
   }
 }
 
